@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "time-stat-display",
+	"version": "${version}",
+	"name": "Time Stat Display",
+	"description": "Simple display that shows the time of day to the 1/2 hour!",
+	"authors": [
+		"ScrambledZ"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/user/scrambledz",
+		"sources": "https://github.com/githuken91/time-stat-display"
+	},
+	"license": "MPL-2.0",
+	"icon": "assets/time-stat-display/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.scrambledzmods.time_stat_display.TimeStatDisplay"
+		],
+		"client": [
+			"net.scrambledzmods.time_stat_display.client.TimeStatDisplayClient"
+		],
+		"modmenu": [
+			"net.scrambledzmods.time_stat_display.client.ModMenuIntegration"
+		]
+	},
+	"mixins": [
+		"time-stat-display.mixins.json",
+		{
+			"config": "time-stat-display.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.2",
+		"yet_another_config_lib_v3": ">=3.9.3+26.1-fabric",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
