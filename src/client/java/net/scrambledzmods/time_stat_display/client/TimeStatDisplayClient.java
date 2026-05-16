@@ -19,7 +19,7 @@ public class TimeStatDisplayClient implements ClientModInitializer {
 	static ClockManager cm = null;
 	// Initialize to 6:00 AM
 	static long ticks = 0;
-	static int halfHours = 12;
+	static int intervals = 12;
 	static String timeStr = "";
 
     @Override
@@ -34,13 +34,13 @@ public class TimeStatDisplayClient implements ClientModInitializer {
 		clock = mc.level.registryAccess().getOrThrow(Timelines.OVERWORLD_DAY).value();
 		ticks = clock.getCurrentTicks(cm);
 
-		halfHours = Math.toIntExact((long)(12+Math.floor(ticks/500)));
+		intervals = Math.toIntExact((long)(72+Math.floor(ticks/83.333333333333333333))); // basically 5 minutes
 
 		if (!TSDConfig.clockType) {
-			timeStr = LocalTime.MIN.plusMinutes(halfHours * 30)
+			timeStr = LocalTime.MIN.plusMinutes(intervals * 5)
 					.format(DateTimeFormatter.ofPattern("h:mm a"));
 		} else {
-			timeStr = LocalTime.MIN.plusMinutes(halfHours * 30)
+			timeStr = LocalTime.MIN.plusMinutes(intervals * 5)
 					.format(DateTimeFormatter.ofPattern("HH:mm"));
 		}
 
