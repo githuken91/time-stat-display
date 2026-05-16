@@ -18,11 +18,12 @@ public class ModMenuIntegration implements ModMenuApi {
                                 .option(Option.<Boolean>createBuilder()
                                         .name(Component.literal("24 hour time"))
                                         .description(OptionDescription.of(Component.literal("Switch between the 24 hour clock and the 12 hour clock")))
-                                        .binding(true, () -> TimeStatDisplayClient.clockSetting, newVal -> TimeStatDisplayClient.clockSetting = newVal)
+                                        .binding(true, () -> TSDConfig.clockType, newVal -> TSDConfig.clockType = newVal)
                                         .controller(BooleanControllerBuilder::create)
                                         .build())
                                 .build())
                         .build())
+                .save(TSDConfig.save)
                 .build().generateScreen(parentScreen);
     }
 }

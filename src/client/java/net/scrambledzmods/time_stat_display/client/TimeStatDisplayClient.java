@@ -16,7 +16,6 @@ import java.time.format.DateTimeFormatter;
 public class TimeStatDisplayClient implements ClientModInitializer {
 	static Minecraft mc = Minecraft.getInstance();
 	static Timeline clock = null;
-	public static boolean clockSetting = false; // true - 24hr, false - 12hr
 	static ClockManager cm = null;
 	// Initialize to 6:00 AM
 	static long ticks = 0;
@@ -25,6 +24,7 @@ public class TimeStatDisplayClient implements ClientModInitializer {
 
     @Override
 	public void onInitializeClient() {
+		TSDConfig.HANDLER.load();
 		HudElementRegistry.attachElementBefore(VanillaHudElements.CHAT, Identifier.fromNamespaceAndPath(TimeStatDisplay.MOD_ID, "before_chat"), TimeStatDisplayClient::extract);
 	}
 
@@ -36,7 +36,7 @@ public class TimeStatDisplayClient implements ClientModInitializer {
 
 		halfHours = Math.toIntExact((long)(12+Math.floor(ticks/500)));
 
-		if (!clockSetting) {
+		if (!TSDConfig.clockType) {
 			timeStr = LocalTime.MIN.plusMinutes(halfHours * 30)
 					.format(DateTimeFormatter.ofPattern("h:mm a"));
 		} else {
