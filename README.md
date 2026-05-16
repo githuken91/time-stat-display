@@ -1,5 +1,7 @@
 # Time Stat Display
 
+(psst! [view on Modrinth! (unworking at the moment)](https://modrinth.com/mod/time-stat-display))
+
 A simple mod that displays the time of day in the bottom-left corner.
 
 ## Why use this mod?
