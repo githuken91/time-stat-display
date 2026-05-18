@@ -7,6 +7,8 @@ import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.resources.Identifier;
 
+import java.awt.*;
+
 import static net.scrambledzmods.time_stat_display.TimeStatDisplay.MOD_ID;
 
 public class TSDConfig {
@@ -21,6 +23,9 @@ public class TSDConfig {
 
     @SerialEntry
     public static boolean clockType = false;
+
+    @SerialEntry
+    public static Color color = new Color(255, 255, 255, 255);
 
     public static Runnable save = () -> {
         TSDConfig.HANDLER.save();

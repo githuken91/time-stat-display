@@ -43,7 +43,6 @@ public class TimeStatDisplayClient implements ClientModInitializer {
 			timeStr = LocalTime.MIN.plusMinutes(intervals * 5)
 					.format(DateTimeFormatter.ofPattern("HH:mm"));
 		}
-
-		graphics.text(mc.font, timeStr, 15, mc.getWindow().getGuiScaledHeight()-15, 0xFFFFFFFF, true);
+		graphics.text(mc.font, timeStr, 15, mc.getWindow().getGuiScaledHeight()-15, TSDConfig.color.getRGB(), true);
 	}
 }
