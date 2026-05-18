@@ -23,7 +23,7 @@ Start by downloading the mod .jar from either the [releases page](https://github
 Then, go to Modrinth and download the respective [YACL version](https://modrinth.com/mod/yacl/versions) for the TSD version you downloaded.
 
 
-|        TSD         |     YACL     |
-|:------------------:|:------------:|
-|     1.0-1.1.2      |  3.9.3-26.1  |
-| 1.1.3 (unreleased) |  3.9.3-26.2  |
+|        TSD        |          YACL           |
+|:-----------------:|:-----------------------:|
+|     1.0-1.1.2     |       3.9.3-26.1        |
+|      1.1.3        | 3.9.3-26.1 / 3.9.3-26.2 |
